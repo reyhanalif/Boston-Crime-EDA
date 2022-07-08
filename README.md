@@ -42,7 +42,7 @@ Dataset ini berisi informasi mengenai laporan insiden yang terjadi di kota Bosto
 - Kolom `DISTRICT`, `SHOOTING`, `UCR PART`, `STREET`, `Lat`, dan `Long` memiliki nilai kosong yang diwakili dengan nilai NaN
 - Kolom `INCIDENT_NUMBER` memuat informasi mengenai nomor unik dari setiap laporan insiden. Karena setiap datanya bersifat unik karena mewakili satu laporan insiden, tidak boleh ada data dengan nomor insiden yang sama. Perlu dicek lebih lanjut mengenai data duplikat tersebut.
 - Kolom `OFFENSE_CODE`, `OFFENSE_CODE_GROUP`, `OFFENSE_DESCRIPTION` memuat informasi dengan tujuan yang sama, yaitu menjelaskan tentang pelanggaran yang terjadi dari setiap insiden. Pada analisis ini, kolom yang akan digunakan sebagai acuan jenis pelanggaran yang terjadi adalah `OFFENSE_CODE_GROUP` karena memiliki nilai unique yang paling kecil. Kolom lainnya akan di drop.
-- Kolom `REPORTING_AREA` memuat informasi tempat asal laporan berdasarkan kode area telpon pembuat laporan. Untuk melihat lokasi suatu insiden sebetulnya sudah diwakili oleh kolom ['DISTRICT'], ['STREET'], dan juga ['Location'] yang secara spesifik memberikan informasi tempat terjadinya insiden sehingga kolom `REPORTING_AREA` dapat di drop.
+- Kolom `REPORTING_AREA` memuat informasi tempat asal laporan berdasarkan kode area telpon pembuat laporan. Untuk melihat lokasi suatu insiden sebetulnya sudah diwakili oleh kolom `DISTRICT`, `STREET`, dan juga `Location` yang secara spesifik memberikan informasi tempat terjadinya insiden sehingga kolom `REPORTING_AREA` dapat di drop.
 - Pada kolom `SHOOTING` dapat dilihat adanya laporan penembakan diwakili dengan nilai 'Y' dan tidak adanya laporan penambakan diwakili dengan nilai 'nan'. Nilai 'nan' dapat kita isi dengan nilai 'N' agar sebanding dengan lawan nilai kategorikalnya.
 - Kolom `Location` memiliki beberapa nilai kosong. Jika kita cek data dari kolom `Location` yang memiliki nilai kosong, terdapat data pada kolom `STREET` dan `DISTRICT` yang memiliki nilai kosong juga, sehingga kita dapat drop data yang memiliki nilai kosong pada ketiga kolom tersebut karena kita tidak tau lokasi insiden tersebut. Data pada kolom `STREET` dan `DISTRICT` yang kosong dapat dilengkapi dengan melihat lokasi di kolom `Location` 
 - Kolom `Lat` dan `Long` dapat kita drop karena kedua informasi tersebut sudah digabung dalam kolom `Location` dan kedua kolom tersebut tidak bisa digunakan untuk analisis jika secara individu atau tidak digabung 
@@ -59,6 +59,10 @@ Dataset ini berisi informasi mengenai laporan insiden yang terjadi di kota Bosto
 ![alt text](https://github.com/reyhanalif/Boston-Crime-EDA/blob/main/Presentation/15.jpg?raw=true)
 ![alt text](https://github.com/reyhanalif/Boston-Crime-EDA/blob/main/Presentation/16.jpg?raw=true)
 ![alt text](https://github.com/reyhanalif/Boston-Crime-EDA/blob/main/Presentation/17.jpg?raw=true)
+
+# Tableu Dashboard
+Dashboard tableu dari visualisasi data pada EDA ini dapat diakses pada link berikut
+https://public.tableau.com/app/profile/reyhan.alif/viz/BostonCrimeDashboard_16571323867760/Dashboard1?publish=yes
 
 # Kesimpulan dan Rekomendasi 
 Kesimpulan yang dihasilkan dari EDA data laporan insiden di kota boston dari tahun (2015-2018) adalah sebagai berikut:
